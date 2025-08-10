@@ -1,7 +1,7 @@
 export default function checkAbnormality(data) {
     let abnormal = '';
 
-    if (data.oxygen < 0) {
+    if (data.oxygen > 0) {
         abnormal += `⚠️ Oxygen level dropped below normal (5 mg/L) to ${data.oxygen} mg/L.<br/>`;
     }
     if (data.nitrogen > 0) {
