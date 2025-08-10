@@ -9,7 +9,7 @@ const api = "/api/v1"
 const app = express();
 app.use(json());
 app.use(cors());
-const port = 3002
+const port = process.env.PORT
 app.get("/", (req, res)=>{
     return res.send("Hello Aqua");
 });
