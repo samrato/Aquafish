@@ -10,7 +10,7 @@ export default async function AddData(req, res){
     const cageRef = db.collection("cages").doc(id);
     const data =  await cageRef.update({nitrogen,oxygen,phosphorus,temp,location})
     console.log(data);
-    if (nitrogen > 0.1 || oxygen < 5 || (temp > 37 && temp > 23) || phosphorus > 0.1){
+    if (nitrogen > 0.1 || oxygen < 5 || temp > 37 || temp < 24 || phosphorus > 0.1){
         const abnormal = checkAbormality(req.body)
         try{
         const userRef = await db.collection("users").doc(req.user).get();
